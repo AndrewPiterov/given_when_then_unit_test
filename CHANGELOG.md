@@ -1,3 +1,4 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Add `given` `when` `then` methods
+* Add `before`, `after`, `beforeAll`, `afterAll` fixtures
