@@ -1,5 +1,11 @@
 # given_when_then_unit_test
 
+[![pub package](https://img.shields.io/pub/v/given_when_then_unit_test.svg?label=given_when_then_unit_test&color=blue)](https://pub.dev/packages/given_when_then_unit_test)
+[![likes](https://badges.bar/given_when_then_unit_test/likes)](https://pub.dev/packages/given_when_then_unit_test/score)
+[![codecov](https://codecov.io/gh/AndrewPiterov/given_when_then_unit_test/branch/main/graph/badge.svg?token=VM9LTJXGQS)](https://codecov.io/gh/AndrewPiterov/given_when_then_unit_test)
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+[![Dart](https://github.com/AndrewPiterov/given_when_then_unit_test/actions/workflows/dart.yml/badge.svg)](https://github.com/AndrewPiterov/given_when_then_unit_test/actions/workflows/dart.yml)
+
 A Flutter package for creating more readable tests. If you are not familiar with [Flutter's Unit tests](https://flutter.dev/docs/cookbook/testing/unit/introduction)
 
 **Given** we feel that our tests are the best documentation of the behaviors in our code.\
@@ -8,27 +14,49 @@ A Flutter package for creating more readable tests. If you are not familiar with
 
 ## Features
 
-* Improve test code readability for more BDD style
+### Improve test code readability
 
 ```dart
-  given('empty calculator', () {
-    // ...
-    when('add 1', () => calc.add(1), then: () {
-      then('result should be 1', () {
-        // ...
-      });
+// Without `given_when_then`
+group('calculator', () {
+  // ...
+  group('add 1', () => calc.add(1), then: () {
+    test('result should be 1', () {
+      // ...
+    });
 
-      when('[and] subtract 1', () => calc.subtract(1), body: () {
-        then('res should be 0', () {
-          // ...
-        });
+    group('[and] subtract 1', () => calc.subtract(1), body: () {
+      test('res should be 0', () {
+        // ...
       });
     });
   });
+});
+
+// With `given_when_then` as a common English sentence
+given('calculator', () {
+  // ...
+  when('add 1', () => calc.add(1), then: () {
+    then('result should be 1', () {
+      // ...
+    });
+
+    when('[and] subtract 1', () => calc.subtract(1), body: () {
+      then('res should be 0', () {
+        // ...
+      });
+    });
+  });
+});
 ```
 
 * Auto compose test message as BDD style
-  
+
+```bash
+✓ calculator When add 1 result should be 1
+✓ calculator When add 1 [and] subtract 1 res should be 0
+```
+
 ```bash
 ✓ Given empty calculator When add 1 Then result should be 1
 ✓ Given empty calculator When add 1 and subtract 1 Then res should be 0

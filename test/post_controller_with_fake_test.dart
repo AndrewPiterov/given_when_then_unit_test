@@ -31,12 +31,16 @@ void main() {
       );
     });
 
-    when2('load initial posts', () {
-      postController.fetchMore();
-    }, then: () {
-      then('should be non empty list', () {
-        postController.posts.should.haveCount(10);
-      });
-    });
+    when2(
+      'load initial posts',
+      () {
+        postController.fetchMore();
+      },
+      then: () {
+        then('should be non empty list', () {
+          postController.posts.should.haveCount(10);
+        });
+      },
+    );
   });
 }

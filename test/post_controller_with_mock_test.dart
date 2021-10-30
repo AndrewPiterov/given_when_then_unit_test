@@ -21,19 +21,23 @@ void main() {
       );
     });
 
-    when2('save new valid post', () {
-      when(() => mockPostRepository.addNew('new post'))
-          .thenAnswer((_) => Future.value(true));
-    }, then: () {
-      then('should return true', () async {
-        final res = await postController.addNew('new post');
-        res.should.beTrue();
-      });
+    when2(
+      'save new valid post',
+      () {
+        when(() => mockPostRepository.addNew('new post'))
+            .thenAnswer((_) => Future.value(true));
+      },
+      then: () {
+        then('should return true', () async {
+          final res = await postController.addNew('new post');
+          res.should.beTrue();
+        });
 
-      // ! DOES NOT WORK then('toastr shows error', () async {
-      //   verify(() => mockToastr.success('ok')).called(1);
-      // });
-    });
+        // ! DOES NOT WORK then('toastr shows error', () async {
+        //   verify(() => mockToastr.success('ok')).called(1);
+        // });
+      },
+    );
 
     whenn('save new valid post', () {
       bool? saveResult;
