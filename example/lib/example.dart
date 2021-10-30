@@ -20,27 +20,24 @@ class Calculator {
 void main() {
   group('calculator', () {
     late Calculator calc;
+    setUp(() => calc = Calculator());
 
-    setUp(() {
-      calc = Calculator();
-    });
-
-    when('add 1', () {
+    group('add 1', () {
       setUp(() => calc.add(1));
-
       test('result should be 1', () {
-        calc.res.should.be(1);
+        expect(calc.res, 1);
       });
 
       group('[and] substract 1', () {
         setUp(() => calc.subtract(1));
         test('res should be 0', () {
-          calc.res.should.beZero();
+          expect(calc.res, isZero);
         });
       });
     });
   });
 
+  // You can rewrite tests above with Given When Then + Shouldly as a common English sentence
   given('calculator', () {
     late Calculator calc;
 
@@ -50,7 +47,6 @@ void main() {
 
     when('add 1', () {
       before(() => calc.add(1));
-
       then('result should be 1', () {
         calc.res.should.be(1);
       });

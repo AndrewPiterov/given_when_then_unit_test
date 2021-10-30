@@ -10,7 +10,7 @@ A Flutter package for creating more readable tests. If you are not familiar with
 
 **Given** we feel that our tests are the best documentation of the behaviors in our code.\
 **When** we read our tests.\
-**Then** we want them to be easy to understand.\
+**Then** we want them to be easy to understand.
 
 ## Features
 
@@ -33,7 +33,7 @@ group('calculator', () {
   });
 });
 
-// With `given_when_then` as a common English sentence
+// 🔥 With `given_when_then` as a common English sentence
 given('calculator', () {
   // ...
   when('add 1', () => calc.add(1), then: () {
@@ -50,12 +50,43 @@ given('calculator', () {
 });
 ```
 
-* Auto compose test message as BDD style
+#### With [`shouldly`](https://pub.dev/packages/shouldly) it makes super readable code 😍
+
+```dart
+given('calculator', () {
+  late Calculator calc;
+
+  before(() {
+    calc = Calculator();
+  });
+
+  when('add 1', () {
+    before(() => calc.add(1));
+
+    then('result should be 1', () {
+      calc.res.should.be(1);
+    });
+
+    when('[and] subtract 1', () {
+      before(() => calc.subtract(1));
+      then('res should be 0', () {
+        calc.res.should.beZero();
+      });
+    });
+  });
+});
+```
+
+### Auto compose test message as BDD style
+
+#### Without `given_when_then`
 
 ```bash
 ✓ calculator When add 1 result should be 1
 ✓ calculator When add 1 [and] subtract 1 res should be 0
 ```
+
+#### With `given_when_then` with minimal effort
 
 ```bash
 ✓ Given empty calculator When add 1 Then result should be 1
