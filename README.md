@@ -50,7 +50,7 @@ given('calculator', () {
 });
 ```
 
-#### With [`shouldly`](https://pub.dev/packages/shouldly) it makes super readable code 😍
+#### With [`shouldly`](https://pub.dev/packages/shouldly) it makes super readable test code 😍
 
 ```dart
 given('calculator', () {

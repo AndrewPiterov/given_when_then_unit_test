@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Downgrade `test` to `^1.16.0`
+
 ## 0.0.3
 
 * Improve documentation
