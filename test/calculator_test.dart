@@ -11,7 +11,7 @@ void main() {
   });
 
   afterAll(() {
-    print('... all tests has been fiished.');
+    print('... all tests has been finished.');
   });
 
   given('empty calculator', () {
