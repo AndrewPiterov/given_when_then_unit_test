@@ -1,7 +1,7 @@
 ## 0.0.5
 
-* [Fixed] Bug #1 
-* removed code duplication
+* [Fix] Bug #1 - async bodies of `given`, `when` aka `group` (@Hu1buerger)
+* [Refactor] removed code duplication (@Hu1buerger)
 
 ## 0.0.4
 

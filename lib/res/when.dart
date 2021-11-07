@@ -62,7 +62,9 @@ void when(
   dynamic Function()? after,
   bool skip = false,
 }) {
-  if(body is Future Function()) throw ArgumentError('when body may not be async.');
+  if (body is Future Function()) {
+    throw ArgumentError('when body may not be async.');
+  }
 
   final regExp = RegExp(r'^\[\w+]');
   final w = regExp.stringMatch(description);
@@ -87,7 +89,7 @@ void when(
 }
 
 /// Alias for [when]; with slight alterations in the signature
-/// 
+///
 /// see [when] for the documentation
 @isTestGroup
 void whenn(
@@ -95,10 +97,11 @@ void whenn(
   dynamic Function() body, {
   dynamic Function()? after,
   bool skip = false,
-}) => when(description, body, after: after, skip: skip);
+}) =>
+    when(description, body, after: after, skip: skip);
 
 /// Alias for [when]; with slight alterations in the signature
-/// 
+///
 /// see [when] for the documentation
 @isTestGroup
 void when2(
@@ -107,4 +110,5 @@ void when2(
   required dynamic Function() then,
   dynamic Function()? after,
   bool skip = false,
-}) => when(description, then, before: before, after: after, skip: skip);
+}) =>
+    when(description, then, before: before, after: after, skip: skip);
