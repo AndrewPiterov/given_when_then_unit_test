@@ -62,6 +62,8 @@ void given(
   dynamic Function()? after,
   bool skip = false,
 }) {
+  if(body is Future Function()) throw ArgumentError('body may not be async.');
+
   final regExp = RegExp(r'^\[\w+]');
   final w = regExp.stringMatch(description);
 

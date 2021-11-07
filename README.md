@@ -215,6 +215,13 @@ given('Post Controller', body: () {
 
 * Collision with [mocktail](https://pub.dev/packages/mocktail) or [mockito](https://pub.dev/packages/mockito) packages which bring `where` method too, you can hide `when` and use `whenn` of this package like below
 
+But prefere to hide and rename imports like so.
+
+```dart 
+import 'package:mocktail/mocktail.dart' hide when;
+import 'package:mocktail/mocktail.dart' as mktl show when;
+```
+
 ```dart
 import 'package:given_when_then_unit_test/given_when_then_unit_test.dart' hide when;
 

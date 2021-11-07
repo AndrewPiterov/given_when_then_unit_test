@@ -1,3 +1,8 @@
+## 0.0.5
+
+* [Fixed] Bug #1 
+* removed code duplication
+
 ## 0.0.4
 
 * Downgrade `test` to `^1.16.0`
