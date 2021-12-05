@@ -1,6 +1,8 @@
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
+import 'given_when_then_options.dart';
+
 /// Creates a new test case with the given description (converted to a string)
 /// and body.
 ///
@@ -59,10 +61,22 @@ void then(
   String description,
   dynamic Function() body, {
   bool skip = false,
+  Map<String, Function()> and = const {},
+  Map<String, Function()> but = const {},
 }) {
   test(
-    'Then $description',
-    body,
+    '\nThen $description',
+    () {
+      body();
+      for (final a in and.entries) {
+        print('\n    And ${a.key}');
+        a.value();
+      }
+      for (final b in but.entries) {
+        print('\n    But ${b.key}');
+        b.value();
+      }
+    },
     skip: skip,
   );
 }

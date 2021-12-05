@@ -146,7 +146,7 @@ given('calculator', () {
         calc.res.should.be(1);
       });
 
-      when('[and] subtract 1', () => calc.subtract(1), body: () {
+      and('subtract 1', () => calc.subtract(1), body: () {
         then('res should be 0', () {
           calc.res.should.beZero();
         });
@@ -215,7 +215,7 @@ given('Post Controller', body: () {
 
 * Collision with [mocktail](https://pub.dev/packages/mocktail) or [mockito](https://pub.dev/packages/mockito) packages which bring `where` method too, you can hide `when` and use `whenn` of this package like below
 
-But prefere to hide and rename imports like so.
+But prefer to hide and rename imports like so.
 
 ```dart 
 import 'package:mocktail/mocktail.dart' hide when;

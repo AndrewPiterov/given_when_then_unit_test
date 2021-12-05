@@ -78,7 +78,7 @@ void given(
   }
 
   group(
-    '$beggining$desc',
+    '\n$beggining$desc',
     () {
       setUp(() => before?.call());
       tearDown(() => after?.call());

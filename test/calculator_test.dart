@@ -44,7 +44,7 @@ void main() {
     });
   });
 
-  given('[Empty] calculator (2)', () {
+  given('empty calculator (2)', () {
     late Calculator calc;
     before(() {
       calc = Calculator();
@@ -56,13 +56,13 @@ void main() {
         calc.res.should.be(1);
       });
 
-      whenn('[and] substract 1', () {
+      and('substract 1', () {
         before(() => calc.substract(1));
         then('res should be 0', () {
           calc.res.should.beZero();
         });
 
-        when('[and] add 3', () {
+        and('add 3', () {
           before(() => calc.add(3));
           then('res should be 3', () {
             calc.res.should.be(3);
