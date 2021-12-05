@@ -1,3 +1,7 @@
+## 0.0.6
+
+* [Fix] Downgrade test to `^0.4.2` due to incompatibility with flutter, see #5 (@Hu1buerger)
+
 ## 0.0.5
 
 * [Fix] Bug #1 - async bodies of `given`, `when` aka `group` (@Hu1buerger)
