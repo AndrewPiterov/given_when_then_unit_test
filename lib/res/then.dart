@@ -58,7 +58,7 @@ import 'package:test/test.dart';
 void then(
   String description,
   dynamic Function() body, {
-  bool skip = false,
+  dynamic skip,
 }) {
   test(
     'Then $description',
