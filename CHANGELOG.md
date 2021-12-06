@@ -1,6 +1,7 @@
 ## 0.0.6
 
-* [Fix] Downgrade test to `^0.4.2` due to incompatibility with flutter, see #5 (@Hu1buerger)
+* [Fix] Downgrade test to `^0.4.2` due to incompatibility with flutter, see [#5](https://github.com/AndrewPiterov/given_when_then_unit_test/issues/5) (@Hu1buerger)
+* [Fix] `skip` as dynamic [#6](https://github.com/AndrewPiterov/given_when_then_unit_test/issues/6)
 
 ## 0.0.5
 
