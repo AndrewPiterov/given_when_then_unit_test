@@ -1,6 +1,7 @@
-import 'package:given_when_then_unit_test/res/given_when_then_options.dart';
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
+
+import 'helpers.dart';
 
 ///
 @isTestGroup
@@ -13,7 +14,7 @@ void and(
   }
 
   group(
-    '\n${' ' * GivenWhenThenOptions.pads}And $description',
+    '${getAdditionalPads()}And $description',
     () {
       body();
     },

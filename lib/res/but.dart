@@ -1,6 +1,7 @@
-import 'package:given_when_then_unit_test/given_when_then_unit_test.dart';
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
+
+import 'helpers.dart';
 
 ///
 @isTest
@@ -10,7 +11,7 @@ void but(
   dynamic skip,
 }) {
   test(
-    '\n${' ' * GivenWhenThenOptions.pads}But $description',
+    '${getAdditionalPads()}But $description',
     body,
     skip: skip,
   );
