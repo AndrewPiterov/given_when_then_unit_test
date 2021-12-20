@@ -62,7 +62,7 @@ void when(
   dynamic Function() body, {
   dynamic Function()? before,
   dynamic Function()? after,
-  bool skip = false,
+  dynamic skip,
 }) {
   if (body is Future Function()) {
     throw ArgumentError('when body may not be async.');

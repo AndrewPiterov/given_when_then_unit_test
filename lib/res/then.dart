@@ -60,9 +60,9 @@ import 'helpers.dart';
 void then(
   String description,
   dynamic Function() body, {
-  bool skip = false,
   Map<String, Function()> and = const {},
   Map<String, Function()> but = const {},
+  dynamic skip,
 }) {
   final ands = and.entries.map((e) => 'And ${e.key}');
   final buts = but.entries.map((e) => 'But ${e.key}');
