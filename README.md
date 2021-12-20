@@ -264,6 +264,12 @@ void main() {
 }
 ```
 
+### And & But
+
+Steps `And` and `But` are inter-changeable.
+
+However, `But` in the English language is generally used in a negative context. And using `But` makes the intent of the test explicit and removes any possible ambiguities.
+
 ## Contributing
 
 We accept the following contributions:
