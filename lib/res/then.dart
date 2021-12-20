@@ -1,6 +1,8 @@
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
+import 'helpers.dart';
+
 /// Creates a new test case with the given description (converted to a string)
 /// and body.
 ///
@@ -58,11 +60,30 @@ import 'package:test/test.dart';
 void then(
   String description,
   dynamic Function() body, {
+  Map<String, Function()> and = const {},
+  Map<String, Function()> but = const {},
   dynamic skip,
 }) {
+  final ands = and.entries.map((e) => 'And ${e.key}');
+  final buts = but.entries.map((e) => 'But ${e.key}');
+
+  final adds = [
+    '',
+    ...ands,
+    ...buts,
+  ].join(getAdditionalPads());
+
   test(
-    'Then $description',
-    body,
+    '${getMainPad()}Then $description$adds',
+    () {
+      body();
+      for (final a in and.entries) {
+        a.value();
+      }
+      for (final b in but.entries) {
+        b.value();
+      }
+    },
     skip: skip,
   );
 }

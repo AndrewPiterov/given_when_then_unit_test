@@ -1,6 +1,8 @@
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
 
+import 'helpers.dart';
+
 /// Creates a group of tests.
 ///
 /// A group's description (converted to a string) is included in the descriptions
@@ -78,7 +80,7 @@ void when(
   }
 
   group(
-    '$beggining$desc',
+    '${getMainPad()}$beggining$desc',
     () {
       setUp(() => before?.call());
       tearDown(() => after?.call());

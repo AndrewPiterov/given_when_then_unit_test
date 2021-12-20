@@ -51,8 +51,9 @@ void main() {
         calc.res.should.be(1);
       });
 
-      when('[and] subtract 1', () {
+      and('subtract 1', () {
         before(() => calc.subtract(1));
+
         then('res should be 0', () {
           calc.res.should.beZero();
         });

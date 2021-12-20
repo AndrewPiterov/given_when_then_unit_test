@@ -10,7 +10,9 @@ A Flutter package for creating more readable tests. If you are not familiar with
 
 **Given** we feel that our tests are the best documentation of the behaviors in our code.\
 **When** we read our tests.\
-**Then** we want them to be easy to understand.
+**Then** we want them to be easy to understand.\
+**And** test code be elegant.\
+**But** be written without any pain.
 
 ## Features
 
@@ -146,7 +148,7 @@ given('calculator', () {
         calc.res.should.be(1);
       });
 
-      when('[and] subtract 1', () => calc.subtract(1), body: () {
+      and('subtract 1', () => calc.subtract(1), body: () {
         then('res should be 0', () {
           calc.res.should.beZero();
         });
@@ -211,11 +213,31 @@ given('Post Controller', body: () {
   });
 ```
 
+## Formatting the test report 📜
+
+You can format the test report, make it in a single line, or print every step on each line by setting variable `GivenWhenThenOptions.pads` with any integer value, e.g.
+
+```dart
+GivenWhenThenOptions.pads = 4;
+```
+
+and result will be:
+
+```bash
+Given the account balance is $100 
+    And the card is valid 
+    And the machine contains enough money 
+When the Account Holder requests $20 
+Then the Cashpoint should dispense
+    And the account balance should be $80
+    And the card should be returned
+```
+
 ## Known Issues
 
 * Collision with [mocktail](https://pub.dev/packages/mocktail) or [mockito](https://pub.dev/packages/mockito) packages which bring `where` method too, you can hide `when` and use `whenn` of this package like below
 
-But prefere to hide and rename imports like so.
+But prefer to hide and rename imports like so.
 
 ```dart 
 import 'package:mocktail/mocktail.dart' hide when;
@@ -247,10 +269,12 @@ void main() {
 We accept the following contributions:
 
 * Ideas how to improve readability or performance
-* Reporting issues
+* [Reporting issues](https://github.com/AndrewPiterov/given_when_then_unit_test/issues/new)
 * Fixing bugs
 * Improving documentation and comments
 
 ## Maintainers
 
 * [Andrew Piterov](mailto:piterov1990@gmail.com?subject=[GitHub]%20Source%20Dart%20given_when_then_unit_test)
+
+<a href="https://www.buymeacoffee.com/devcraft.ninja" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
