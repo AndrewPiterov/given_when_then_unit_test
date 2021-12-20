@@ -1,3 +1,9 @@
+## 0.0.7
+
+* [Add] `And` step
+* [Add] `But` step
+* [Add] `` for test report formatting
+
 ## 0.0.6
 
 * [Fix] Downgrade test to `^0.4.2` due to incompatibility with flutter, see [#5](https://github.com/AndrewPiterov/given_when_then_unit_test/issues/5) (@Hu1buerger)
