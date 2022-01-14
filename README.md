@@ -270,6 +270,27 @@ Steps `And` and `But` are inter-changeable.
 
 However, `But` in the English language is generally used in a negative context. And using `But` makes the intent of the test explicit and removes any possible ambiguities.
 
+### Test cases
+
+```dart
+testCases([
+  const TestCase([1, 1, 2]),
+  const TestCase([5, 3, 8])
+], (testCase) {
+  final x = testCase.args[0] as int;
+  final y = testCase.args[1] as int;
+
+  given('two numbers $x and $y', () {
+    //
+    when('summarizing them', () {
+      then('the result should be equal to ${testCase.args.last}', () {
+        (x + y).should.be(testCase.args[2] as int);
+      });
+    });
+  });
+});
+```
+
 ## Contributing
 
 We accept the following contributions:

@@ -1,3 +1,7 @@
+## 0.0.8
+
+* [Add] `testCases`
+
 ## 0.0.7
 
 * [Add] `And` step
