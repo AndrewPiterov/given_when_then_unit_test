@@ -1,3 +1,7 @@
+## 0.0.9
+
+* [Add] generic `testCases1<A>`, `testCases2<A, B>`, `testCases3<A, B, C>`
+
 ## 0.0.8
 
 * [Add] `testCases`

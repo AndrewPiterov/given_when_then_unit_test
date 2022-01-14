@@ -215,6 +215,10 @@ given('Post Controller', body: () {
 
 ### Test cases
 
+There are two ways how to use `test cases`:
+
+#### version 1
+
 ```dart
 testCases([
   const TestCase([1, 1, 2]),
@@ -244,6 +248,24 @@ Given two numbers 5 and 3
 When summarizing them 
 Then the result should be equal to 8
 
+```
+
+#### version 2 - with generic
+
+```dart
+testCases2<String, String>([
+  const TestCase2('Flutter', 'F'),
+  const TestCase2('Awesome', 'A'),
+], (args) {
+  test('Word ${args.arg1} start with ${args.arg2}', () {
+    args.arg1.should.startWith(args.arg2);
+  });
+});
+```
+
+```bash
+✓ Word Flutter start with F
+✓ Word Awesome start with A
 ```
 
 ## Formatting the test report 📜
