@@ -2,6 +2,8 @@ import 'package:given_when_then_unit_test/given_when_then_unit_test.dart';
 import 'package:shouldly/shouldly.dart';
 
 void main() {
+  GivenWhenThenOptions.pads = 4;
+
   testCases([
     const TestCase([1, 1, 2]),
     const TestCase([5, 3, 8])
