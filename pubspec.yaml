@@ -1,6 +1,6 @@
 name: given_when_then_unit_test
 description: A package to make Unit Test code more readable and well documented.
-version: 0.0.8
+version: 0.0.10
 homepage: https://github.com/AndrewPiterov/given_when_then_unit_test
 
 environment:
