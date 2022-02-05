@@ -1,7 +1,6 @@
+import 'package:given_when_then_unit_test/res/helpers.dart';
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
-
-import 'helpers.dart';
 
 /// Creates a new test case with the given description (converted to a string)
 /// and body.
@@ -73,8 +72,8 @@ void then(
     ...buts,
   ].join(getAdditionalPads());
 
-  String testDescriptor = '${getMainPad()}Then $description$adds';
-  List<Function()> executables = [body, ...and.values, ...but.values];
+  final testDescriptor = '${getMainPad()}Then $description$adds';
+  final executables = [body, ...and.values, ...but.values];
 
   if (executables.any((e) => e is Future Function())) {}
   if (body is Future Function()) {

@@ -1,7 +1,8 @@
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:given_when_then_unit_test/res/helpers.dart';
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
-
-import 'helpers.dart';
 
 /// Creates a group of tests.
 ///

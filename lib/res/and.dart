@@ -1,7 +1,6 @@
+import 'package:given_when_then_unit_test/res/helpers.dart';
 import 'package:meta/meta.dart';
 import 'package:test/test.dart';
-
-import 'helpers.dart';
 
 ///
 @isTestGroup
