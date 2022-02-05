@@ -73,15 +73,32 @@ void then(
     ...buts,
   ].join(getAdditionalPads());
 
+  String testDescriptor = '${getMainPad()}Then $description$adds';
+  List<Function()> executables = [body, ...and.values, ...but.values];
+
+  if (executables.any((e) => e is Future Function())) {}
+  if (body is Future Function()) {
+    test(
+      testDescriptor,
+      () async {
+        for (final exec in executables) {
+          if (exec is Future Function()) {
+            await exec();
+            continue;
+          }
+          exec();
+        }
+      },
+      skip: skip,
+    );
+    return;
+  }
+  //else all functions are sync
   test(
-    '${getMainPad()}Then $description$adds',
+    testDescriptor,
     () {
-      body();
-      for (final a in and.entries) {
-        a.value();
-      }
-      for (final b in but.entries) {
-        b.value();
+      for (final func in executables) {
+        func();
       }
     },
     skip: skip,
