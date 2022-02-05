@@ -2,6 +2,10 @@
 
 * [Fix] of async tests are executed from sync function, not awaiting the Future, see [#11]
 
+## 0.0.9
+
+* [Add] generic `testCases1<A>`, `testCases2<A, B>`, `testCases3<A, B, C>`
+
 ## 0.0.8
 
 * [Add] `testCases`
