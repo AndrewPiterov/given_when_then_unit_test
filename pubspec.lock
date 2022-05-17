@@ -133,7 +133,7 @@ packages:
       name: lint
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   logging:
     dependency: transitive
     description:
@@ -168,7 +168,7 @@ packages:
       name: mocktail
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "0.3.0"
   node_preamble:
     dependency: transitive
     description:
@@ -238,7 +238,7 @@ packages:
       name: shouldly
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.4"
+    version: "0.5.0+1"
   source_map_stack_trace:
     dependency: transitive
     description:

@@ -1,3 +1,6 @@
+## 0.1.0
+
+* [Change] each `GIVEN` `WHEN` `THEN` on separate line by default
 ## 0.0.10
 
 * [Fix] of async tests are executed from sync function, not awaiting the Future, see [#11]

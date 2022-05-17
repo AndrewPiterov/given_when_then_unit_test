@@ -13,5 +13,5 @@ class GivenWhenThenOptions {
   /// Then I see something
   ///   But I do not see something else
   /// ```
-  static int pads = 0;
+  static int pads = 2;
 }
