@@ -141,10 +141,10 @@ packages:
     dependency: "direct dev"
     description:
       name: lint
-      sha256: "5715d702a2c3b493e09ed9e223625f0fc1f75e04167e338133a4cef28b868c1f"
+      sha256: f4bd4dbaa39f4ae8836f2d1275f2f32bc68b3a8cce0a0735dd1f7a601f06682a
       url: "https://pub.dev"
     source: hosted
-    version: "1.8.2"
+    version: "2.1.2"
   logging:
     dependency: transitive
     description:
@@ -330,7 +330,7 @@ packages:
     source: hosted
     version: "1.24.2"
   test_api:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: test_api
       sha256: daadc9baabec998b062c9091525aa95786508b1c48e9c30f1f891b8bf6ff2e64
@@ -394,4 +394,4 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.19.0 <3.0.0"
+  dart: ">=3.0.0 <4.0.0"
